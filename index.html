@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MindCare | Mental Health & Wellbeing</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5faf7;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* =================================================
+           NAVBAR
+        ================================================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 22px;
+            font-weight: bold;
+            color: #15803d;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #dcfce7;
+
+            font-size: 22px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #15803d;
+        }
+
+        /* =================================================
+           HERO
+        ================================================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 8%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ecfdf5,
+                    #f8fafc
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            margin-bottom: 22px;
+
+            border-radius: 30px;
+
+            background: #dcfce7;
+            color: #166534;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+
+            margin-bottom: 24px;
+
+            color: #14532d;
+        }
+
+        .hero h1 span {
+            color: #16a34a;
+        }
+
+        .hero p {
+            max-width: 700px;
+
+            font-size: 19px;
+
+            color: #64748b;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-button,
+        .secondary-button {
+            display: inline-block;
+
+            padding: 13px 24px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+        .primary-button {
+            background: #16a34a;
+            color: white;
+        }
+
+        .primary-button:hover {
+            background: #15803d;
+        }
+
+        .secondary-button {
+            background: white;
+            color: #166534;
+
+            border: 1px solid #bbf7d0;
+        }
+
+        .secondary-button:hover {
+            background: #f0fdf4;
+        }
+
+        /* =================================================
+           GENERAL SECTIONS
+        ================================================= */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+
+            margin: 0 auto 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            color: #14532d;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        /* =================================================
+           ABOUT
+        ================================================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 30px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .about-card {
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+        }
+
+        .about-card h3 {
+            margin-bottom: 12px;
+
+            color: #166534;
+
+            font-size: 21px;
+        }
+
+        .about-card p {
+            color: #64748b;
+        }
+
+        /* =================================================
+           FEATURES
+        ================================================= */
+
+        .features {
+            background: #f5faf7;
+        }
+
+        .feature-grid {
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+        .feature-card {
+            padding: 28px;
+
+            border-radius: 18px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+
+            transition: transform 0.2s,
+                        box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(15, 23, 42, 0.08);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #dcfce7;
+
+            font-size: 25px;
+
+            margin-bottom: 18px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 9px;
+
+            color: #14532d;
+        }
+
+        .feature-card p {
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+        /* =================================================
+           HOW IT WORKS
+        ================================================= */
+
+        .how-it-works {
+            background: white;
+        }
+
+        .steps {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 15px;
+
+            border-radius: 50%;
+
+            background: #16a34a;
+            color: white;
+
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .step h3 {
+            color: #14532d;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* =================================================
+           PRIVACY
+        ================================================= */
+
+        .privacy {
+            background: #ecfdf5;
+        }
+
+        .privacy-box {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background: white;
+
+            border: 1px solid #bbf7d0;
+        }
+
+        .privacy-box h3 {
+            color: #166534;
+
+            margin-bottom: 15px;
+        }
+
+        .privacy-box p {
+            color: #64748b;
+
+            margin-bottom: 15px;
+        }
+
+        .privacy-list {
+            padding-left: 22px;
+
+            color: #475569;
+        }
+
+        .privacy-list li {
+            margin-bottom: 8px;
+        }
+
+        /* =================================================
+           DISCLAIMER
+        ================================================= */
+
+        .disclaimer {
+            background: #fff7ed;
+        }
+
+        .disclaimer-box {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid #fed7aa;
+
+            background: #ffffff;
+        }
+
+        .disclaimer-box h3 {
+            color: #9a3412;
+
+            margin-bottom: 12px;
+        }
+
+        .disclaimer-box p {
+            color: #7c2d12;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+        /* =================================================
+           CTA
+        ================================================= */
+
+        .cta {
+            text-align: center;
+
+            background: #14532d;
+
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+
+            color: #dcfce7;
+        }
+
+        .cta-button {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 10px;
+
+            background: white;
+
+            color: #166534;
+
+            text-decoration: none;
+
+            font-weight: 600;
+        }
+
+        /* =================================================
+           FOOTER
+        ================================================= */
+
+        footer {
+            padding: 30px 8%;
+
+            text-align: center;
+
+            background: #052e16;
+
+            color: #bbf7d0;
+        }
+
+        footer p {
+            font-size: 13px;
+
+            margin-bottom: 5px;
+        }
+
+        /* =================================================
+           RESPONSIVE
+        ================================================= */
+
+        @media (max-width: 900px) {
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌿
+            </div>
+
+            MindCare
+
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#features">
+                    Features
+                </a>
+            </li>
+
+            <li>
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+            </li>
+
+            <li>
+                <a href="#privacy">
+                    Privacy
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         HERO
+    ================================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🌿 Mental Health & Wellbeing
+            </div>
+
+            <h1>
+                Your wellbeing,
+                <span>one day at a time.</span>
+            </h1>
+
+            <p>
+                MindCare is an AI-powered mental health and
+                wellbeing assistant designed to help you reflect
+                on your wellbeing, build healthy habits, and
+                access supportive guidance.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#features"
+                    class="primary-button"
+                >
+                    Explore MindCare
+                </a>
+
+                <a
+                    href="#about"
+                    class="secondary-button"
+                >
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================= -->
+
+    <section
+        class="about"
+        id="about"
+    >
+
+        <div class="section-heading">
+
+            <h2>
+                What is MindCare?
+            </h2>
+
+            <p>
+                A supportive digital space for understanding
+                and tracking your everyday wellbeing.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>
+                    🌿 Supportive Wellness
+                </h3>
+
+                <p>
+                    MindCare provides tools that encourage
+                    self-reflection and healthy daily habits.
+                    It is designed to give users a simple
+                    and supportive way to engage with their
+                    wellbeing.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    🤖 AI-Powered Assistance
+                </h3>
+
+                <p>
+                    The MindCare chatbot provides supportive
+                    conversations using an AI-powered system.
+                    It is designed to assist with general
+                    mental health and wellbeing conversations.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    📊 Personal Wellbeing Tracking
+                </h3>
+
+                <p>
+                    MindCare brings together wellbeing
+                    questionnaires, sleep tracking and
+                    meditation information to help users
+                    understand their daily wellness patterns.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>
+                    🔒 Account-Based Experience
+                </h3>
+
+                <p>
+                    MindCare features are associated with the
+                    logged-in user's account so that personal
+                    wellness information and journal entries
+                    remain separated between users.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FEATURES
+    ================================================= -->
+
+    <section
+        class="features"
+        id="features"
+    >
+
+        <div class="section-heading">
+
+            <h2>
+                MindCare Features
+            </h2>
+
+            <p>
+                Tools designed to support your everyday
+                mental health and wellbeing journey.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Daily Questionnaire
+                </h3>
+
+                <p>
+                    Reflect on your daily wellbeing through
+                    the MindCare questionnaire.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Wellness Score
+                </h3>
+
+                <p>
+                    Track your wellbeing using the application's
+                    wellness scoring system when the required
+                    daily information is available.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    😴
+                </div>
+
+                <h3>
+                    Sleep Tracking
+                </h3>
+
+                <p>
+                    Record your sleep information and keep track
+                    of your daily sleep habits.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🧘
+                </div>
+
+                <h3>
+                    Meditation
+                </h3>
+
+                <p>
+                    Record meditation activity and maintain
+                    awareness of your meditation routine.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💬
+                </div>
+
+                <h3>
+                    AI Chatbot
+                </h3>
+
+                <p>
+                    Have supportive wellbeing conversations
+                    with the MindCare AI assistant.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Private Journal
+                </h3>
+
+                <p>
+                    Write, edit and manage personal journal
+                    entries associated with your MindCare account.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         HOW IT WORKS
+    ================================================= -->
+
+    <section
+        class="how-it-works"
+        id="how-it-works"
+    >
+
+        <div class="section-heading">
+
+            <h2>
+                How MindCare Works
+            </h2>
+
+            <p>
+                A simple approach to everyday wellbeing tracking.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Sign In
+                </h3>
+
+                <p>
+                    Access your personal MindCare account.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Reflect
+                </h3>
+
+                <p>
+                    Complete your daily wellbeing questionnaire
+                    when you choose to do so.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Track
+                </h3>
+
+                <p>
+                    Record sleep and meditation information
+                    through the available wellness tools.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+                    Use the AI chatbot and other MindCare
+                    features for supportive wellbeing guidance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRIVACY
+    ================================================= -->
+
+    <section
+        class="privacy"
+        id="privacy"
+    >
+
+        <div class="section-heading">
+
+            <h2>
+                Privacy & Data
+            </h2>
+
+            <p>
+                MindCare uses account-based storage for
+                application features that require saved data.
+            </p>
+
+        </div>
+
+
+        <div class="privacy-box">
+
+            <h3>
+                🔒 Your MindCare Information
+            </h3>
+
+            <p>
+                Depending on the features you use, the
+                application may store information associated
+                with your account.
+            </p>
+
+
+            <ul class="privacy-list">
+
+                <li>
+                    Account and profile information
+                </li>
+
+                <li>
+                    Daily questionnaire responses
+                </li>
+
+                <li>
+                    Sleep tracking records
+                </li>
+
+                <li>
+                    Meditation records
+                </li>
+
+                <li>
+                    Wellness scores
+                </li>
+
+                <li>
+                    Chat history
+                </li>
+
+                <li>
+                    Private journal entries
+                </li>
+
+                <li>
+                    Notification preferences
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DISCLAIMER
+    ================================================= -->
+
+    <section class="disclaimer">
+
+        <div class="section-heading">
+
+            <h2>
+                Important Information
+            </h2>
+
+        </div>
+
+
+        <div class="disclaimer-box">
+
+            <h3>
+                ⚠️ MindCare can make mistakes
+            </h3>
+
+            <p>
+                MindCare is an AI-powered supportive wellness
+                application. AI-generated responses may not
+                always be accurate, complete, or appropriate.
+            </p>
+
+            <p>
+                MindCare does not replace qualified mental-health
+                professionals, medical diagnosis, treatment,
+                or professional care.
+            </p>
+
+            <p>
+                If you are experiencing a mental-health emergency
+                or believe you may be in immediate danger,
+                contact your local emergency services or an
+                appropriate crisis-support service.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CALL TO ACTION
+    ================================================= -->
+
+    <section class="cta">
+
+        <h2>
+            Take care of your wellbeing.
+        </h2>
+
+        <p>
+            MindCare provides a collection of tools designed
+            to help you reflect, track and stay connected
+            with your everyday wellbeing.
+        </p>
+
+        <a
+            href="#about"
+            class="cta-button"
+        >
+            Learn About MindCare
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer>
+
+        <p>
+            🌿 <strong>MindCare</strong>
+        </p>
+
+        <p>
+            AI-Powered Mental Health & Wellbeing Assistant
+        </p>
+
+        <p>
+            © 2026 MindCare. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
